@@ -1,25 +1,28 @@
-<h2> Medicament List</h2>
-<table class = "table table-striped">
-    <thead>
-        <tr>
-            <th> First Name</th>
-            <th> Last Name </th>
-            <th> Email Id</th>
-            <th> Medicament Name</th>
-            <th> Actions </th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor = "let medicament of medicaments" >
-            <td> {{ medicament.firstName }} </td>
-            <td> {{ medicament.lastName }} </td>
-            <td> {{ medicament.emailId }} </td>
-            <td> {{ medicament.medicamentName }} </td>
-            <td>
-                <button (click) = "updateMedicament(medicament.id)" class = "btn btn-info"> Like post</button>
-                <button (click) = "deleteMedicament(medicament.id)" class = "btn btn-danger" style="margin-left: 10px"> Dislike post</button>
-                <button (click) = "medicamentDetails(medicament.id)" class = "btn btn-info" style="margin-left: 10px"> View</button>
-            </td>
-        </tr>
-    </tbody>
-</table>
+<div class="container"> 
+    <h1 class="text-center"> Farmaco </h1>
+    <h2> Medicament List</h2>
+    <table class = "table table-striped">
+        <thead>
+            <tr>
+                <th> First Name</th>
+                <th> Last Name </th>
+                <th> Email Id</th>
+                <th> Medicament Name</th>
+                <th> Actions </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor = "let medicament of medicaments" >
+                <td> {{ medicament.firstName }} </td>
+                <td> {{ medicament.lastName }} </td>
+                <td> {{ medicament.emailId }} </td>
+                <td> {{ medicament.medicamentName }} </td>
+                <td>
+                    <button (click) = "updateMedicament(medicament.id)" class = "btn btn-info"> Like post</button>
+                    <button (click) = "deleteMedicament(medicament.id)" class = "btn btn-danger" style="margin-left: 10px"> Dislike post</button>
+                    <button (click) = "medicamentDetails(medicament.id)" class = "btn btn-info" style="margin-left: 10px"> View</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
