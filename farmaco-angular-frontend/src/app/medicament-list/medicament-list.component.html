@@ -1,28 +1,36 @@
 <div class="container"> 
     <h1 class="text-center"> Farmaco </h1>
     <h2> Medicament List</h2>
-    <table class = "table table-striped">
-        <thead>
-            <tr>
-                <th> First Name</th>
-                <th> Last Name </th>
-                <th> Email Id</th>
-                <th> Medicament Name</th>
-                <th> Actions </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor = "let medicament of medicaments" >
-                <td> {{ medicament.firstName }} </td>
-                <td> {{ medicament.lastName }} </td>
-                <td> {{ medicament.emailId }} </td>
-                <td> {{ medicament.medicamentName }} </td>
-                <td>
-                    <button (click) = "updateMedicament(medicament.id)" class = "btn btn-info"> Like post</button>
-                    <button (click) = "deleteMedicament(medicament.id)" class = "btn btn-danger" style="margin-left: 10px"> Dislike post</button>
-                    <button (click) = "medicamentDetails(medicament.id)" class = "btn btn-info" style="margin-left: 10px"> View</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <section class="section section-lg pt-lg-0 ">
+        <div style="padding: 5%;">
+          <div class="row justify-content-center">
+            <div class="col-lg-12">
+              <div class="row row-grid;">
+                <div class="col-lg-4 medical-card" *ngFor="let medicament of medicaments">
+                  <div class="card card-lift--hover shadow border-0">
+                    <div class="card-body py-5">
+                      <div class="icon icon-shape icon-shape-success rounded-circle mb-4">
+                        <i class="ni ni-istanbul"></i>
+                      </div>
+                      <h6 class="text-success text-uppercase">{{ medicament.firstName }} {{ medicament.lastName }}</h6>
+                      <p class="description mt-3">Mail : {{ medicament.emailId }}</p>
+                      <p class="description mt-3">Medicament Description : {{ medicament.medicamentName }} </p>
+                      <div>
+                        <span class="badge badge-pill badge-success">business</span>
+                        <span class="badge badge-pill badge-success">vision</span>
+                        <span class="badge badge-pill badge-success">success</span>
+                      </div>
+                      <button (click) = "updateMedicament(medicament.id)" class = "btn btn-info"> Like post</button>
+                      <button (click) = "deleteMedicament(medicament.id)" class = "btn btn-danger" style="margin-left: 10px"> Dislike post</button>
+                      <button (click) = "medicamentDetails(medicament.id)" class = "btn btn-success" style="margin-left: 10px"> View</button>
+                      </div>
+                    </div>
+                <h6></h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
 </div>
+
